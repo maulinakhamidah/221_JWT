@@ -63,3 +63,27 @@ npm start
 | `POST` | `/api/komik` | **Terproteksi** | `Authorization: Bearer <TOKEN>` | Menambahkan komik baru |
 | `PUT` | `/api/komik/:id` | **Terproteksi** | `Authorization: Bearer <TOKEN>` | Memperbarui data komik |
 | `DELETE` | `/api/komik/:id` | **Terproteksi** | `Authorization: Bearer <TOKEN>` | Menghapus komik dari database |
+
+## Panduan Pengujian API (cURL)
+
+### 1. Registrasi User
+```bash
+curl -X POST http://localhost:3000/api/register \
+  -H "Content-Type: application/json" \
+  -d '{"email": "maulina@umy.ac.id", "password": "password123"}'
+```
+
+### 2. Login User
+```bash
+curl -X POST http://localhost:3000/api/login \
+  -H "Content-Type: application/json" \
+  -d '{"email": "maulina@umy.ac.id", "password": "password123"}'
+```
+
+### 3. Tambah Komik Baru (Menggunakan JWT Bearer Token)
+```bash
+curl -X POST http://localhost:3000/api/komik \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer <TOKEN_HASIL_LOGIN>" \
+  -d '{"title": "Detective Conan Vol. 100", "description": "Kasus misteri organisasi hitam", "author": "Gosho Aoyama"}'
+```
