@@ -51,3 +51,15 @@ PORT=3000
 npm start
 # Server berjalan di http://localhost:3000
 ```
+
+## Spesifikasi Endpoint REST API
+
+| Method | Endpoint | Akses | Header Wajib | Deskripsi |
+| :--- | :--- | :--- | :--- | :--- |
+| `POST` | `/api/register` | Publik | `Content-Type: application/json` | Pendaftaran akun pengguna baru |
+| `POST` | `/api/login` | Publik | `Content-Type: application/json` | Autentikasi user & perolehan JWT token |
+| `GET` | `/api/komik` | Publik | - | Menampilkan seluruh data komik |
+| `GET` | `/api/komik/:id` | Publik | - | Menampilkan detail komik berdasarkan ID |
+| `POST` | `/api/komik` | **Terproteksi** | `Authorization: Bearer <TOKEN>` | Menambahkan komik baru |
+| `PUT` | `/api/komik/:id` | **Terproteksi** | `Authorization: Bearer <TOKEN>` | Memperbarui data komik |
+| `DELETE` | `/api/komik/:id` | **Terproteksi** | `Authorization: Bearer <TOKEN>` | Menghapus komik dari database |
