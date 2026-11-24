@@ -79,7 +79,7 @@ async function login(req, res) {
       },
       process.env.JWT_SECRET,
       {
-        expiresIn: process.env.JWT_EXPIRES || "1d",
+        expiresIn: process.env.JWT_EXPIRES_IN || process.env.JWT_EXPIRES || "1d",
       }
     );
 
