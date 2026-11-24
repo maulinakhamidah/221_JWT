@@ -78,6 +78,7 @@ async function login(req, res) {
         email: user.email,
       },
       process.env.JWT_SECRET,
+      // Konfigurasi masa aktif token dari environment variable (default 1 hari)
       {
         expiresIn: process.env.JWT_EXPIRES_IN || process.env.JWT_EXPIRES || "1d",
       }
