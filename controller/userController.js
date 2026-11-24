@@ -14,13 +14,6 @@ async function register(req, res) {
       });
     }
 
-    // Validasi panjang karakter password minimal 6 karakter
-    if (password.length < 6) {
-      return res.status(400).json({
-        message: "Password minimal terdiri dari 6 karakter.",
-      });
-    }
-
     const existingUser = await User.findOne({
       where: { email },
     });
