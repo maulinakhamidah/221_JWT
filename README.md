@@ -87,3 +87,6 @@ curl -X POST http://localhost:3000/api/komik \
   -H "Authorization: Bearer <TOKEN_HASIL_LOGIN>" \
   -d '{"title": "Detective Conan Vol. 100", "description": "Kasus misteri organisasi hitam", "author": "Gosho Aoyama"}'
 ```
+
+---
+*Dokumentasi dan repositori ini disusun untuk memenuhi tugas praktikum Pemrograman Web Service (PWS).*
