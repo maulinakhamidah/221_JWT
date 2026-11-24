@@ -47,7 +47,9 @@ async function register(req, res) {
 
 async function login(req, res) {
   try {
-    const { email, password } = req.body;
+    // Sanitasi dan trimming input login
+    const email = req.body.email ? req.body.email.trim() : "";
+    const password = req.body.password ? req.body.password.trim() : "";
 
     if (!email || !password) {
       return res.status(400).json({
